@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <app-header></app-header>
-        <app-content v-om:pass="deliverNum"></app-content>
+        <app-content v-on:pass="deliverNum"></app-content>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -38,7 +38,7 @@
             },
             methods: {
                 deliverNum: function(value) {
-                    this.num = valuel;
+                    this.num = 10;
                 }
           } 
         })
