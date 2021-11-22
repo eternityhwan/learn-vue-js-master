@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <nomukun></nomukun>
+        <nomunomu></nomunomu>
+    </div>
+
+    <div id="app2">
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 전역 컴포넌트
+    Vue.component('app-header', {
+        template: '<h1>Header</h1>'
+    });
+    Vue.component('nomukun', {
+        template: '<h3>bongha</h3>'
+    });
+    // Vue.component('nomunomu', 컴포넌트 내용)
+        new Vue({
+            el: '#app',
+            // 지역 컴포넌트 등록 방식
+            // why componet 가 아닌 componets인가
+
+            components: {
+            //    '키':'값'
+            'nomunomu': {
+                template: '<footer>nomu</footer>'  
+                      }
+                    }
+        });
+
+        new Vue({
+            el: '#app2'
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var options = {
+            el: '#app',
+            data: {
+                message: 'hi'
+            },
+            methods: {
+
+            },
+        }
+        var vm = new Vue(options);
+        //위에 나온 el(element): '#app' 해주는 이유 -- 
+        // <div id="app"></div> 탭 생성할 때 app로  함
+        // 위에 body 태그안에서 app이라는 아이디를 가진 탭을 찾아
+        // 인스턴스를 붙이겠다는 뜻임
+        // 왜 붙이냐?
+        // 붙여야 <div id="app"> 여기사이에 뷰의 기능과 속성이 유요해짐 </div>
+        // el(element)가 없으면 아무리 데이터를 적용해도 데이터는 
+        // 위에 <div></div> 사이에서 쓸 수 없음
+        // Vue가 개발하기 쉽게 기능,속성을 제공함, api란 기능임.
+
+        // 함수 앞에 대문자이면 생성자 함수임 
+    </script>
+
+</body>
+</html>

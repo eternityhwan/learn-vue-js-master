@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>    
+    
+    
+    <script>
+        var div = document.querySelector('#app');
+        // 기존 웹 개발 방식
+        // html 에 태그를 정의(div) 태그의 정보를 가져와서 특정 변수에 담긴 문자열을 바꾼다고하면 다시 써야해
+        // vue.js 핵심 기능인 Reactivity를 구현해보자
+
+       // HTML은 돔에 정보를 넣는거고 스크립트 역할은(아래 헬로월드) 돔의 역할을 조작하는 것
+       // console.log(div); // 콘솔로그가 위쪽 div tag 정보를 저장하게된다.
+        var str = 'hello world';
+        div.innerHTML = 'str';
+        
+        str = 'hello world!!!';
+        div.innerHTML = str;
+    </script>
+</body>
+</html>
