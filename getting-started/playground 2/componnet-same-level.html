@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="app">
-        <app-header></app-header>
+        <p>{{num}}</p>
+        <app-header v-bind:propsdata="num"></app-header>
         <app-content v-on:pass="deliverNum"></app-content>
 
     </div>
@@ -16,13 +17,14 @@
 
     <script>
         var appHeader = {
-            template: '<div>header</div>'
+            template: '<div>header</div>',
+            props:['propsdata']
         }
         var appContent = {
             template: '<div>content<button v-on:click="passNum">pass</button></div>',
             methods: {
                 passNum: function() {
-                    this.$emit('pass', 10); /// payload가 10이 넘어감 
+                    this.$emit('pass', 30); /// payload가 20이 넘어감 
                 }
             }
         }
@@ -38,7 +40,7 @@
             },
             methods: {
                 deliverNum: function(value) {
-                    this.num = 10;
+                    this.num = value; 
                 }
           } 
         })

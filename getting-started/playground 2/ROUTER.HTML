@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- url에 따라 뿌려지는 영역을 라우터뷰라고 함 라우터 탭으로 정의가능 -->
+        <div>
+         <router-link to="/login">Login</router-link>
+         <!-- <a hfef="/login">Login</a> -->
+         <router-link to="/main">Main</router-link>
+        </div>
+        <router-view></router-view>
+
+
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- 먼저 뷰 스크립트 넣고, 뷰 라우터 넣으면 됨. -->
+    <script>
+    var LoginComponent = {
+        template: '<div>longin</div>'
+    }
+
+    var MainComponent = {
+        template: '<div>main</div>'
+    }
+    var router = new VueRouter({
+        //    뉴 라우터에 객체를 넣어놓은 상황임
+        routes: [
+        // 라우츠는 페이지의 정보들이 들어가는 속성임, 페이지의 url, 뿌려질 컴포넌트 입력
+        {
+            path: '/login',
+        //해당 url에서 표시될 컴포넌트
+        // 주소창에로 /login 치면 밑에 컴포넌트 화면이 나오는거임
+            component: LoginComponent // < 해당 컴포넌트로 뿌려지는 건 하나기 때문에
+            // componts가 아니라 component임
+        },
+        // 메인페이지 정보
+        {
+            path : '/main',
+            component: MainComponent
+        }
+        ]
+        // routes 속성에는 페이지의 라우팅 정보가 들어감
+        // 라우팅 정보라면 어떤 url로 들어갔을 때 어떤 페이지가 뿌려질지가
+        // 배열로 들어간다.
+        // 페이지의 개수만큼 객체의 개수가 필요함.
+    });
+    new Vue({
+        el: '#app',
+        router: router
+
+        // 라우터라는 뉴 뷰의 재사용속성(메서드크리에이트같은): 뒤에오는 라우터는 위에있는 라우터
+        // 뷰 라우터를 인스턴스 방식으로 내용을 뽑아내는거임.
+        // 이렇게 쓰면 뷰 인스턴스의 라우터를 제대로 주입받은 상황이 된 것이다.
+
+        // new Vue 인스턴스 샵app으로 인스턴스 정의했고 라우터도 그 범위 안에서 유효함.
+
+    });
+    </script>
+</body>
+</html>
